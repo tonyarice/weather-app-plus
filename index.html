@@ -16,7 +16,36 @@
   <body>
     <div class="container">
       <div class="card">
-        <div class="card-body"></div>
+        <div class="card-body">
+          <nav class="navbar navbar-light bg-light">
+            <form class="w-100" id="search-form">
+              <div class="row">
+                <div class="col-7">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    class="form-inline"
+                    placeholder="Enter city"
+                    autofocus="on"
+                    id="city-search"
+                  />
+                </div>
+                <div class="col-5">
+                  <button class="btn btn-primary my-2 my-sm-0" type="submit">
+                    Search
+                  </button>
+                  <button
+                    class="btn btn-dark"
+                    type="button"
+                    id="current-location"
+                  >
+                    Current Location
+                  </button>
+                </div>
+              </div>
+            </form>
+          </nav>
+        </div>
       </div>
     </div>
     <h1>Weather App</h1>
