@@ -33,7 +33,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
-  currentConditionsElement.innerHTML = response.data.weather[0].main;
+  currentConditionsElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -41,11 +41,11 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  //   iconElement.setAttribute("alt, response.data.weather[0].main);
+  //   iconElement.setAttribute("alt, response.data.weather[0].description);
 }
 
 let apiKey = "fdcd56ea6e53c9d3c7330d2c7397cff6";
-let city = "Sydney";
+let city = "Richmond";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 //console.log(apiUrl);
