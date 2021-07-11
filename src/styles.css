@@ -22,7 +22,7 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 18px;
-  text-transform: capitalize;
+  
 }
 
 .weather-app-wrapper {
@@ -61,8 +61,13 @@ line-height: 1;
 }
 
 #current-conditions {
-
+text-transform: capitalize;
 }
+
+/* another option if using li element
+li:first-letter {
+  text-transform: capitalize;
+} */
 
 #hyperlink-line {
   text-decoration: none;
