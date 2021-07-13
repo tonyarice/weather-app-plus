@@ -44,9 +44,21 @@ function displayTemperature(response) {
   //   iconElement.setAttribute("alt, response.data.weather[0].description);
 }
 
-let apiKey = "fdcd56ea6e53c9d3c7330d2c7397cff6";
-let city = "Richmond";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+function search(city) {
+  let apiKey = "fdcd56ea6e53c9d3c7330d2c7397cff6";
+  //   let city = "Richmond";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  //console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-//console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Richmond");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

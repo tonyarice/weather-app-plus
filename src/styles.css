@@ -76,3 +76,7 @@ li:first-letter {
 #hyperlink-line:hover {
   text-decoration: underline;
 }
+
+#credit {
+  font-size: smaller;
+}
