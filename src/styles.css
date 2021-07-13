@@ -22,7 +22,6 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 18px;
-  
 }
 
 .weather-app-wrapper {
@@ -42,16 +41,16 @@ li {
 
 .weather-temperature img {
   margin-right: 5px;
- 
+
   height: 64px;
   width: 64px;
 }
 
 .weather-temperature strong {
-  color rgb(33, 33, 33);
-font-size: 64px;
-font-weight: 400;
-line-height: 1;
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .weather-temperature .units {
@@ -60,8 +59,17 @@ line-height: 1;
   top: -34px;
 }
 
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 #current-conditions {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 /* another option if using li element
@@ -69,12 +77,12 @@ li:first-letter {
   text-transform: capitalize;
 } */
 
-#hyperlink-line {
+.hyperlink-line {
   text-decoration: none;
 }
 
-#hyperlink-line:hover {
-  text-decoration: underline;
+.hyperlink-line:hover {
+  text-decoration: none;
 }
 
 #credit {

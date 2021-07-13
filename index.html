@@ -48,10 +48,17 @@
               <div class="d-flex weather-temperature">
                 <img src="" alt="Sunny" id="icon" class="float-left" />
                 <div class="float-left">
-                  <strong id="temperature"></strong
-                  ><span class="units"
-                    >°F | <a href="#" id="hyperlink-line">°C</a></span
-                  >
+                  <strong id="temperature"></strong>
+                  <span class="units">
+                    <a
+                      href="#"
+                      id="fahrenheit-link"
+                      class="hyperlink-line active"
+                      >°F</a
+                    >
+                    |
+                    <a href="#" id="celsius-link" class="hyperlink-line">°C</a>
+                  </span>
                 </div>
               </div>
             </div>
@@ -69,7 +76,7 @@
             <a
               href="https://github.com/tonyarice/weather-app-plus"
               target="_blank"
-              id="hyperlink-line"
+              class="hyperlink-line"
               >Open-source code</a
             >
             by Tonya Rice
