@@ -1,5 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+
+  background-color: pink;
+  background-repeat: no-repeat;
+
+  background-image: url("images/poppies.jpg");
 }
 
 h1 {
@@ -66,6 +71,16 @@ li {
 
 .active:hover {
   text-decoration: none;
+}
+
+.btn-primary {
+  background-color: goldenrod;
+  border: gray;
+}
+
+.btn-success {
+  background-color: orangered;
+  border: gray;
 }
 
 #current-conditions {
