@@ -65,6 +65,7 @@ function handleSubmit(event) {
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+
   //remove the active class to the fahrenheit link
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
@@ -84,6 +85,47 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function currentLocationSearch(position) {
+  let apiKey = "fdcd56ea6e53c9d3c7330d2c7397cff6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(currentLocationSearch);
+}
+
+let locationButton = document.querySelector("#current-location");
+locationButton.addEventListener("click", currentLocation);
+
+// function displayWindKilometers(event) {
+//   event.preventDefault();
+//   let windSpeedElement = document.querySelector("#wind-speed");
+
+//   //   //remove the active class to the fahrenheit link
+//   //   fahrenheitLink.classList.remove("active");
+//   //   celsiusLink.classList.add("active");
+//   //   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+//   //   //   alert(celsiusTemperature);
+
+//   let miles = Math.round(response.data.wind.speed);
+//   let kilometers = miles / 1.609;
+
+//   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+// }
+
+// function displayWindKilometers(event) {
+//   event.preventDefault();
+
+//   let windSpeedElement = document.querySelector("#wind-speed");
+//   let miles = Math.round(response.data.wind.speed);
+//   let kilometers = miles / 1.609;
+
+//   windSpeedElement.innerHTML = miles;
+// }
+
 let fahrenheitTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -94,5 +136,11 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+// let windKilometers = document.querySelector("#wind-kilometers");
+// celsiusLink.addEventListener("click", displayWindKilometers);
+
+// let windMiles = document.querySelector("#wind-miles");
+// fahrenheitLink.addEventListener("click", displayWindMiles);
 
 search("Richmond");
