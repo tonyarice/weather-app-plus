@@ -33,8 +33,12 @@ li {
 
 .weather-app {
   padding: 20px;
-  border: 1px solid rgb(245, 229, 182);
+  border: 1px solid rgb(59, 45, 2);
   border-radius: 10px;
+}
+
+.weather-app .bird {
+  position: relative;
 }
 
 .overview {
