@@ -22,6 +22,15 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function formatSunrise(timestamp) {
   let date = new Date(timestamp * 1000);
   let hours = date.getHours();
@@ -48,15 +57,6 @@ function formatSunset(timestamp) {
   }
 
   return `${hours}:${minutes}`;
-}
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
 }
 
 function displayForecast(response) {
@@ -105,7 +105,7 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
+  // console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let currentConditionsElement = document.querySelector("#current-conditions");
