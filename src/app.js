@@ -22,6 +22,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatSunrise(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+function formatSunset(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -32,7 +60,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -78,7 +105,7 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
-  //   console.log(response.data);
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let currentConditionsElement = document.querySelector("#current-conditions");
@@ -86,6 +113,8 @@ function displayTemperature(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
 
   fahrenheitTemperature = response.data.main.temp;
 
@@ -100,8 +129,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.coord);
+  sunriseElement.innerHTML = formatSunrise(response.data.sys.sunrise);
+  sunsetElement.innerHTML = formatSunset(response.data.sys.sunset);
 }
 
 function search(city) {
