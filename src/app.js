@@ -60,6 +60,7 @@ function formatSunset(timestamp) {
 }
 
 function displayForecast(response) {
+  // console.log(response.data.daily);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -87,8 +88,7 @@ function displayForecast(response) {
             forecastDay.temp.min
           )}°</span>
         </div>
-      
-    </div>`;
+      </div>`;
     }
   });
 
@@ -131,6 +131,8 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   sunriseElement.innerHTML = formatSunrise(response.data.sys.sunrise);
   sunsetElement.innerHTML = formatSunset(response.data.sys.sunset);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
