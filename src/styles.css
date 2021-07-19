@@ -37,8 +37,8 @@ li {
   border-radius: 10px;
 }
 
-.weather-app .bird {
-  position: relative;
+.weather-app .bird-line img {
+  transform: scaleX(-1);
 }
 
 .overview {
