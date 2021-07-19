@@ -182,6 +182,7 @@ function currentLocationSearch(position) {
 
 function currentLocation(event) {
   event.preventDefault();
+  document.querySelector("#city-input").value = "";
   navigator.geolocation.getCurrentPosition(currentLocationSearch);
 }
 
