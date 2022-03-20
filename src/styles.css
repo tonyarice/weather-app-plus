@@ -130,3 +130,14 @@ li:first-letter {
 #credit {
   font-size: smaller;
 }
+
+@media only screen and (max-width: 900px) {
+
+  .weather-app .bird-line img {
+    width: 300px;
+  }
+
+  .weather-temperature .units {
+    top: 0;
+  }
+}
