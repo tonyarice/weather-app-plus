@@ -174,7 +174,7 @@ function displayFahrenheitTemperature(event) {
 }
 
 function currentLocationSearch(position) {
-  let apiKey = "75ac3bc7bb5ea8d213f64346ce799072";
+  let apiKey = "fdcd56ea6e53c9d3c7330d2c7397cff6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayTemperature);
